@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Intro &#8212; H-hat</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/my_style.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Current Stage" href="current_stage.html" />
+    <link rel="prev" title="\(\hat{H}\) documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="intro">
+<h1>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h1>
+<p><span class="math notranslate nohighlight">\(\hat{H}\)</span> is the <strong>core</strong> quantum language for <span class="math notranslate nohighlight">\(C^{\dagger}\)</span> programming language <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<p>The initial idea for the language was to detach the low level of qubit-targeted quantum gates instructions from the possible capability of quantum processors through abstract instructions or functions that might do the hard work without the need for the user to do so. Additionally, provide meaningful results from the measurements as useful data for the algorithm being run.</p>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A (high level) quantum algorithms builder</p></li>
+<li><p>Handling output data with context meaning</p></li>
+<li><p>Debugging results and quantum processes through post-measurement analysis</p></li>
+<li><p>Convert high level languages commands into low level quantum instructions for quantum languages such as <strong>openQASM</strong>, <strong>cQASM</strong>, <strong>NetQASM</strong>, <strong>Q1ASM</strong> to be execute on their respective hardware/simulator</p></li>
+<li><p>Gates approach - no directed qubit relation since it will be handled by the language, its interpreter/compiler and subsequently by the low level quantum languages compiler</p></li>
+<li><p>Aimed for both quantum computers and quantum networks</p></li>
+</ul>
+</section>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Provide an intermediate picture between high-level and QASM-like programming languages</p></li>
+<li><p>Make use of basic quantum gates and complex quantum instructions in a dummy-qubit environment</p></li>
+<li><p>Bring light to measurement results and their analysis as a language built-in property</p></li>
+<li><p>Debugging through (partial) quantum analysis of measurement results for results and inner processes comparing them to simulated ones (using fisher information, linear entropy, entanglement measurements, etc)</p></li>
+<li><p>Provide algorithms usability for the context of both quantum processors (quantum computers) and quantum networks (quantum internet)</p></li>
+</ul>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>simple syntax</p></li>
+<li><p>static-typed</p></li>
+<li><p>quantum functions for quantum data</p></li>
+<li><p>quantum commands are referred with <code class="code docutils literal notranslate"><span class="pre">&#64;</span></code> before the word, i.e. <code class="code docutils literal notranslate"><span class="pre">&#64;h</span></code>, <code class="code docutils literal notranslate"><span class="pre">&#64;cnot</span></code></p></li>
+<li><p>measurements automatically made with <code class="code docutils literal notranslate"><span class="pre">&#64;return</span></code></p></li>
+</ul>
+<section id="data-types">
+<h3>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">null</span></code>: no data</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">bool</span></code>: binary data, i.e. true and false, full and empty; represented as <code class="code docutils literal notranslate"><span class="pre">T</span></code> and <code class="code docutils literal notranslate"><span class="pre">F</span></code></p></li>
+<li><p>[<em>to be revised</em>] <code class="code docutils literal notranslate"><span class="pre">register</span></code>: sequence of natural amount of enumerated (indexed) single binary data; <code class="code docutils literal notranslate"><span class="pre">hashmap</span></code> with integer keys and single binary values. It is intended to store the output collected from each single measurement operation (aka <code class="code docutils literal notranslate"><span class="pre">&#64;return</span></code>)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">int</span></code>: integer numbers</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">float</span></code>: floating point numbers</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">str</span></code>: sequence of 0 or more characters between quotes <code class="code docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">list</span></code>: sequence of any enumerated data</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">circuit</span></code>: sequence of 1 or more quantum gates for 1 or more qubits in 1 or more steps; can contain other circuits as well</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">hashmap</span></code>: an unordered associative array of keys and values</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">measurement</span></code>: a <code class="code docutils literal notranslate"><span class="pre">hashmap</span></code>-like type containing relevant data output from the qubits measurement, such as: unique bits sequences final counting, number of shots, some special grouping of bits sequences counting (depending on extra arguments passed)</p></li>
+</ul>
+<hr class="docutils" />
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://cdagger.com">https://cdagger.com</a></p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/hhat_logo.svg" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Intro</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#objectives">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="current_stage.html">Current Stage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter"><span class="math notranslate nohighlight">\(\hat{H}\)</span> documentation</a></li>
+      <li>Next: <a href="current_stage.html" title="next chapter">Current Stage</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Eduardo Maschio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/intro.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

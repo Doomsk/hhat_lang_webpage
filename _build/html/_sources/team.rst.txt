@@ -1,0 +1,17 @@
+Team
+=====
+
+Currently, the language is developed by Doomsk_, T1t0_, Kaonan_ and Anneriet_.
+
+
+
+
+
+
+
+.. _Anneriet: https://github.com/anneriet
+.. _Doomsk: https://github.com/Doomsk
+.. _Kaonan: https://github.com/kaosmicadei
+.. _T1t0: https://github.com/adauto6
+
+
