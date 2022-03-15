@@ -1,9 +1,9 @@
 Team
 =====
 
-Currently, the language is developed by Doomsk_, T1t0_, Kaonan_ and Anneriet_.
+Currently, the language is being developed by Doomsk_, T1t0_, Kaonan_ and Anneriet_.
 
-
+More information on how to contribute and etc soon.
 
 
 
