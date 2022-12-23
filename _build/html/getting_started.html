@@ -2,10 +2,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Getting started &#8212; H-hat</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -14,10 +14,13 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Intro" href="intro.html" />
+    <link rel="next" title="Language Syntax" href="language_syntax.html" />
+    <link rel="prev" title="Team" href="team.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -35,22 +38,22 @@
           <div class="body" role="main">
             
   <section id="getting-started">
-<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h1>
 <p>While the code still is in designing process, you can check the current syntax out and have a feel of what to expect soon.</p>
 <section id="code-samples">
-<h2>Code samples<a class="headerlink" href="#code-samples" title="Permalink to this headline">¶</a></h2>
+<h2>Code samples<a class="headerlink" href="#code-samples" title="Permalink to this heading">¶</a></h2>
 <p>One-line</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main</span> <span class="n">null</span> <span class="n">C</span><span class="p">:</span> <span class="p">(</span> <span class="nb">int</span> <span class="n">num</span><span class="p">:</span> <span class="p">(:</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span> <span class="mi">1</span><span class="p">),</span> <span class="p">:</span><span class="nb">print</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>Quantum functions</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">func</span> <span class="n">measurement</span> <span class="nd">@grover</span> <span class="p">(</span><span class="n">circuit</span> <span class="nd">@oracle</span><span class="p">):</span> <span class="p">(</span>
-    <span class="nb">int</span> <span class="n">size</span><span class="p">:</span> <span class="p">(:</span><span class="nd">@oracle</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>
-    <span class="n">circuit</span> <span class="nd">@c1</span><span class="p">(</span><span class="n">size</span><span class="p">):</span> <span class="p">(:</span><span class="nd">@superposn</span><span class="p">,</span> <span class="p">:</span><span class="nd">@oracle</span><span class="p">)</span>
-    <span class="n">measurement</span> <span class="nd">@m1</span><span class="p">(</span><span class="n">size</span><span class="p">):</span> <span class="p">(</span><span class="n">num_shots</span><span class="p">:</span> <span class="mi">1024</span><span class="p">)</span>
-    <span class="k">for</span> <span class="p">(</span><span class="mf">0.</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">div</span><span class="p">(</span><span class="n">size</span> <span class="mi">2</span><span class="p">))):</span> <span class="p">(</span> <span class="nd">@c1</span> <span class="p">(:</span><span class="nd">@diffusion</span><span class="p">(</span><span class="nd">@oracle</span><span class="p">))</span> <span class="p">)</span>
-    <span class="nd">@c1</span> <span class="p">(:</span><span class="nd">@m1</span><span class="p">)</span>
-    <span class="nd">@return</span> <span class="p">(</span><span class="nd">@c1</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">func</span> <span class="n">circuit</span> <span class="nd">@grover</span> <span class="p">(</span><span class="n">circuit</span> <span class="nd">@oracle</span><span class="p">)</span> <span class="p">(</span>
+    <span class="nb">int</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(:</span><span class="nd">@oracle</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>
+    <span class="n">circuit</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="nd">@c1</span> <span class="o">=</span> <span class="p">(:</span><span class="nd">@init</span><span class="p">,</span> <span class="p">:</span><span class="nd">@oracle</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="mf">0.</span><span class="o">.</span><span class="n">i_sqrt</span><span class="p">(</span><span class="n">div</span><span class="p">(</span><span class="n">size</span> <span class="mi">2</span><span class="p">)))</span> <span class="p">(</span>
+      <span class="p">:</span> <span class="nd">@c1</span><span class="p">(:</span><span class="nd">@ampl</span><span class="p">(</span><span class="nd">@oracle</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nd">@c1</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -82,17 +85,21 @@
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="current_stage.html">Current Stage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#code-samples">Code samples</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="language_syntax.html">Language Syntax</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="intro.html" title="previous chapter">Intro</a></li>
+      <li>Previous: <a href="team.html" title="previous chapter">Team</a></li>
+      <li>Next: <a href="language_syntax.html" title="next chapter">Language Syntax</a></li>
   </ul></li>
 </ul>
 </div>
@@ -105,7 +112,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -122,7 +129,7 @@
       &copy;2022, Eduardo Maschio.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

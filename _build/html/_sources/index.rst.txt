@@ -22,6 +22,7 @@ This is a work in progress, thus many aspects of the language may change through
    current_stage.rst
    team.rst
    getting_started.rst
+   language_syntax.rst
    
 
 Indices and tables

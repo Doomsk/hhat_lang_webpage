@@ -2,10 +2,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Intro &#8212; H-hat</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -14,7 +14,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -37,11 +39,11 @@
           <div class="body" role="main">
             
   <section id="intro">
-<h1>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h1>
-<p><span class="math notranslate nohighlight">\(\hat{H}\)</span> is the <strong>core</strong> quantum language for <span class="math notranslate nohighlight">\(C^{\dagger}\)</span> programming language <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<h1>Intro<a class="headerlink" href="#intro" title="Permalink to this heading">¶</a></h1>
+<p><span class="math notranslate nohighlight">\(\hat{H}\)</span> is the <strong>core</strong> quantum language for <span class="math notranslate nohighlight">\(C^{\dagger}\)</span> programming language <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <p>The initial idea for the language was to detach the low level of qubit-targeted quantum gates instructions from the possible capability of quantum processors through abstract instructions or functions that might do the hard work without the need for the user to do so. Additionally, provide meaningful results from the measurements as useful data for the algorithm being run.</p>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>A (high level) quantum algorithms builder</p></li>
 <li><p>Handling output data with context meaning</p></li>
@@ -52,7 +54,7 @@
 </ul>
 </section>
 <section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Provide an intermediate picture between high-level and QASM-like programming languages</p></li>
 <li><p>Make use of basic quantum gates and complex quantum instructions in a dummy-qubit environment</p></li>
@@ -62,36 +64,56 @@
 </ul>
 </section>
 <section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>simple syntax</p></li>
 <li><p>static-typed</p></li>
 <li><p>quantum functions for quantum data</p></li>
-<li><p>quantum commands are referred with <code class="code docutils literal notranslate"><span class="pre">&#64;</span></code> before the word, i.e. <code class="code docutils literal notranslate"><span class="pre">&#64;h</span></code>, <code class="code docutils literal notranslate"><span class="pre">&#64;cnot</span></code></p></li>
-<li><p>measurements automatically made with <code class="code docutils literal notranslate"><span class="pre">&#64;return</span></code></p></li>
+<li><p>quantum commands and variables are referred with <code class="code docutils literal notranslate"><span class="pre">&#64;</span></code> before the word, i.e. <code class="code docutils literal notranslate"><span class="pre">&#64;h</span></code>, <code class="code docutils literal notranslate"><span class="pre">&#64;cnot</span></code>, <code class="code docutils literal notranslate"><span class="pre">&#64;var</span></code></p></li>
+<li><p>measurements automatically occurs when quantum data interacts with classical instructions,
+functions, operators and variables</p></li>
 </ul>
-<section id="data-types">
-<h3>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="built-in-data-types">
+<h2>Built-In Data Types<a class="headerlink" href="#built-in-data-types" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">null</span></code>: no data</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">bool</span></code>: binary data, i.e. true and false, full and empty; represented as <code class="code docutils literal notranslate"><span class="pre">T</span></code> and <code class="code docutils literal notranslate"><span class="pre">F</span></code></p></li>
-<li><p>[<em>to be revised</em>] <code class="code docutils literal notranslate"><span class="pre">register</span></code>: sequence of natural amount of enumerated (indexed) single binary data; <code class="code docutils literal notranslate"><span class="pre">hashmap</span></code> with integer keys and single binary values. It is intended to store the output collected from each single measurement operation (aka <code class="code docutils literal notranslate"><span class="pre">&#64;return</span></code>)</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">int</span></code>: integer numbers</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">float</span></code>: floating point numbers</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">str</span></code>: sequence of 0 or more characters between quotes <code class="code docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">list</span></code>: sequence of any enumerated data</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">circuit</span></code>: sequence of 1 or more quantum gates for 1 or more qubits in 1 or more steps; can contain other circuits as well</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">str</span></code>: sequence of 0 or more characters between quotes <code class="code docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> or <code class="code docutils literal notranslate"><span class="pre">''</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">circuit</span></code>: sequence of 1 or more quantum gates for 1 or more indices in 1 or more steps; can contain other circuits as well</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">hashmap</span></code>: an unordered associative array of keys and values</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">measurement</span></code>: a <code class="code docutils literal notranslate"><span class="pre">hashmap</span></code>-like type containing relevant data output from the qubits measurement, such as: unique bits sequences final counting, number of shots, some special grouping of bits sequences counting (depending on extra arguments passed)</p></li>
 </ul>
+<p>Additionally, except for <code class="code docutils literal notranslate"><span class="pre">hashmap</span></code> and <code class="code docutils literal notranslate"><span class="pre">measurement</span></code> types, it is possible to
+have many elements of a single type arranged as a list.</p>
+</section>
+<section id="quantum-data">
+<h2>Quantum Data<a class="headerlink" href="#quantum-data" title="Permalink to this heading">¶</a></h2>
+<p>The first different aspect of <span class="math notranslate nohighlight">\(\hat{H}\)</span> is how it deals with <em>quantum data</em>. Here
+quantum data is built on circuits with no reference to qubits (in which there is no access), but rather to <em>indices</em> where should be seeing as markers for the compilers to take the instructions and perform their optimizations, mitigations and operations to be carried to the <em>actual</em> quantum hardware (or simulator). By doing so, quantum gates and how they are arranged matter most than actual quantum states from qubits, due to quantum gates feasibility to define instructions for the quantum device. Hence we define this as a <strong>Heisenberg architecture</strong> language, where gates evolve the circuit-carried data.</p>
+<p>Another aspect that differs is how the quantum data interactcs with classical data and
+operators: here there are no <em>measurements</em> explictly being made; we designed the language
+in such a way to avoid bringing too much of physical aspects that would slow down a
+programmer ability to solve the actual problem and make them spend too much time trying to figure
+out how to deal with quantum counterparts in the process. We <em>have to assume</em> that some
+parts of the hardware will just work fine, as we do for classical devices. They must be
+underneath the language and compiler if we want to provide a clear path for programmers to
+use quantum advantage on their daily-life and, soon, on production code. In this sense,
+<em>every time that a circuit type variable interacts with a classical operator or variable,
+that encounter will trigger a series of procedures that will result in a classical data
+from the quantum data</em>. The resulting data will depending on: which data type or operator it is
+interacting with; and the type of quantum data to be generated from: one-shot-at-a-time or
+a all-shots-at-once.</p>
 <hr class="docutils" />
 <p class="rubric">Footnotes</p>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p><a class="reference external" href="https://cdagger.com">https://cdagger.com</a></p>
-</dd>
-</dl>
-</section>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://cdagger.com">https://cdagger.com</a></p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -123,11 +145,14 @@
 <li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#objectives">Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#built-in-data-types">Built-In Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quantum-data">Quantum Data</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="current_stage.html">Current Stage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="language_syntax.html">Language Syntax</a></li>
 </ul>
 
 <div class="relations">
@@ -148,7 +173,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -165,7 +190,7 @@
       &copy;2022, Eduardo Maschio.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

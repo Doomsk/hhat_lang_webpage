@@ -2,10 +2,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>\(\hat{H}\) documentation &#8212; H-hat</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -14,7 +14,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -36,7 +38,7 @@
           <div class="body" role="main">
             
   <section id="hat-h-documentation">
-<h1><span class="math notranslate nohighlight">\(\hat{H}\)</span> documentation<a class="headerlink" href="#hat-h-documentation" title="Permalink to this headline">¶</a></h1>
+<h1><span class="math notranslate nohighlight">\(\hat{H}\)</span> documentation<a class="headerlink" href="#hat-h-documentation" title="Permalink to this heading">¶</a></h1>
 <p>Welcome to the <span class="math notranslate nohighlight">\(\hat{H}\)</span> documentation.</p>
 <p><span class="math notranslate nohighlight">\(\hat{H}\)</span> <em>reads as ‘H-hat’. In Quantum Mechanics, it is a quantum operator that deals with the system energy and its dynamics.</em></p>
 <p>It is a quantum programming language (QPL) aimed to build quantum algorithms through higher abstraction layers of gates instructions. Users should have <strong>no</strong> <em>extensive</em> prior knowledge in quantum computing to make use of the power of quantum computers and quantum networks.</p>
@@ -48,6 +50,8 @@
 <li class="toctree-l2"><a class="reference internal" href="intro.html#summary">Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#objectives">Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#built-in-data-types">Built-In Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#quantum-data">Quantum Data</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="current_stage.html">Current Stage</a></li>
@@ -56,11 +60,16 @@
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#code-samples">Code samples</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="language_syntax.html">Language Syntax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="language_syntax.html#current-data-types">Current Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_syntax.html#structure">Structure</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
@@ -96,6 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="current_stage.html">Current Stage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="language_syntax.html">Language Syntax</a></li>
 </ul>
 
 <div class="relations">
@@ -115,7 +125,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -132,7 +142,7 @@
       &copy;2022, Eduardo Maschio.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
