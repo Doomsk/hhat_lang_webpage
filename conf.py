@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'H-hat QPL'
+project = 'H-hat'
 copyright = '2022, Eduardo Maschio'
 author = 'Eduardo Maschio'
 

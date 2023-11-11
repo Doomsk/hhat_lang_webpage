@@ -1,32 +1,24 @@
 Getting started
 ===============
 
-While the code still is in designing process, you can check the current syntax out and have a feel of what to expect soon.
+Take a glimpse of the code in the `samples below <Code samples_>`_. Or check it on the :ref:`language syntax` page.
 
 ------------
 Code samples 
 ------------
 
-One-line
+One single expression:
 
 .. code-block::  
     
-    main null C: ( int num: (:add(1 1), :print) )
+    .[1 1]:sum:print
 
 
-
-Quantum functions
+Now consider the case where you are playing RPG, Werewolf: The Apocalypse, for instance, and you need to roll a d10 dice for your character's Attribute tests, with `+2` bonus. You can roll the dice using :math:`\hat{H}` and quantum computers!
 
 .. code-block::
 
-    func circuit @grover (circuit @oracle) (
-        int size = (:@oracle(size))
-        circuit(size) @c1 = (:@init, :@oracle)
-        for (0..i_sqrt(div(size 2))) (
-          : @c1(:@ampl(@oracle)) 
-        )
-        return (@c1)
-    )
-
+    .[1 6]:@shuffle:@dice
+    .[2 @dice]:sum:print("Attribute test result: ")
 
 
