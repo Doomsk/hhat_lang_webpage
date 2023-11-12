@@ -18,7 +18,7 @@ Now consider the case where you are playing RPG, Werewolf: The Apocalypse, for i
 
 .. code-block::
 
-    .[1 6]:@shuffle:@dice
+    .[1 10]:@shuffle:@dice
     .[2 @dice]:sum:print("Attribute test result: ")
 
 
