@@ -52,7 +52,7 @@ html_favicon = 'hhat_logo.ico'
 html_title = 'H-hat'
 html_short_title = 'H-hat'
 html_theme_options = {
-    'logo': 'hhat_logo.svg',
+    # 'logo': 'hhat_logo.svg',
     'title': 'H-hat',
     'short_title': 'H-hat',
     'logo_name': False,
