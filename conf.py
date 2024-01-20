@@ -47,14 +47,11 @@ exclude_patterns = ['_readthedocs', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'alabaster'
-# html_logo = 'hhat_logo.svg'
 html_favicon = 'hhat_logo.ico'
 html_title = 'H-hat'
 html_short_title = 'H-hat'
 html_theme_options = {
     'logo': 'hhat_logo.svg',
-    # 'title': 'H-hat',
-    # 'short_title': 'H-hat',
     'logo_name': False,
 }
 # Add any paths that contain custom static files (such as style sheets) here,
