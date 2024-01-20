@@ -10,9 +10,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import sys
-sys.path.insert(0, os.path.abspath('old_docs'))
+# import os
+# import sys
+# sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
@@ -53,8 +53,8 @@ html_title = 'H-hat'
 html_short_title = 'H-hat'
 html_theme_options = {
     'logo': 'hhat_logo.svg',
-    'title': 'H-hat',
-    'short_title': 'H-hat',
+    # 'title': 'H-hat',
+    # 'short_title': 'H-hat',
     'logo_name': False,
 }
 # Add any paths that contain custom static files (such as style sheets) here,

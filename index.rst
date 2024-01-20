@@ -6,7 +6,9 @@
 :math:`\hat{H}` documentation
 =============================
 
-Welcome to the :math:`\hat{H}` documentation. You can find its repository on GitHub_.
+Welcome to the :math:`\hat{H}` documentation. You can find the project repository at `H-hat project repository`_. The current :math:`\hat{H}` programming language repository is here_.
+
+----
 
 :math:`\hat{H}` *reads as 'H-hat'. In Quantum Mechanics, it is a quantum operator that deals with the system energy and its dynamics.*
 
@@ -20,6 +22,15 @@ A development timeline blog-like document is also available to make the developm
 
 ----
 
+------
+Notice
+------
+
+The language is going through a major refactoring that will change how the language is structured and will heavily impact the current state as described in this document. For those who wants to still read and get an overview of the language purposes and concepts, it is still (mostly) valid. The new version should be ready to be tested starting somewhere in February 2024.
+
+As a one-person project, it is possible that this document will be outdated. If you read this and things don't seem to reflect the repositories listed above, let me know me by sending and issue at `this documentation repository issues page`_.
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -31,4 +42,6 @@ A development timeline blog-like document is also available to make the developm
    getting_started.rst
    language_syntax.rst
 
-.. _GitHub: https://github.com/hhat-lang/hhat_lang
+.. _here: https://github.com/hhat-lang/hhat_lang
+.. _H-hat project repository: https://github.com/orgs/hhat-lang/repositories
+.. _this documentation repository issues page: https://github.com/Doomsk/hhat_lang_webpage/issues
