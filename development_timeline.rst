@@ -7,4 +7,12 @@ To keep track of the development history of the language, I_ decided to start wr
 
 :ref:`2020 timeline`
 
+.. toctree::
+    :maxdepth: 2
+    :caption: Timeline:
+
+    2020_timeline.rst
+    2021_timeline.rst
+
+
 .. _I: https://github.com/Doomsk

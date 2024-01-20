@@ -1,0 +1,7 @@
+types ()
+imports (qaoa)
+protocols (int: biggest-value)
+
+main (
+
+)

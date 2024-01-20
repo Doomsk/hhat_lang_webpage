@@ -10,9 +10,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('old_docs'))
 
 
 # -- Project information -----------------------------------------------------
@@ -29,6 +29,7 @@ author = 'Eduardo Maschio'
 # ones.
 extensions = [
     'sphinx.ext.mathjax',
+    'sphinx.ext.autodoc',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -47,11 +48,15 @@ exclude_patterns = ['_readthedocs', 'Thumbs.db', '.DS_Store']
 #
 html_theme = 'alabaster'
 # html_logo = 'hhat_logo.svg'
+html_favicon = 'hhat_logo.ico'
+html_title = 'H-hat'
+html_short_title = 'H-hat'
 html_theme_options = {
     'logo': 'hhat_logo.svg',
-    'logo_name': False
+    'title': 'H-hat',
+    'short_title': 'H-hat',
+    'logo_name': False,
 }
-html_title = 'H-hat'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".

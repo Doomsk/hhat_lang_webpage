@@ -12,6 +12,8 @@ Welcome to the :math:`\hat{H}` documentation. You can find its repository on Git
 
 :math:`\hat{H}` is a quantum programming language (QPL) aimed to build quantum algorithms through abstracting low-level concepts found in most QPLs, such as *gates*, *qubits* and *measurements*. Users should have **no** *extensive* prior knowledge in quantum computing to make use of the power of quantum computers and quantum networks.
 
+A development timeline blog-like document is also available to make the development journey public. It will be continuously updated and can be found on :ref:`development timeline`.
+
 ----
 
 **Disclaimer**: This is a work in progress, thus many aspects of the language may change throughout the process.
@@ -22,6 +24,7 @@ Welcome to the :math:`\hat{H}` documentation. You can find its repository on Git
    :maxdepth: 2
    :caption: Contents:
 
+   development_timeline.rst
    installation.rst
    intro.rst
    current_stage.rst
